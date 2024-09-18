@@ -1,0 +1,35 @@
+<APIProxy revision="1" name="llm-youtube">
+    <DisplayName></DisplayName>
+    <Description></Description>
+    <CreatedAt>1726579139448</CreatedAt>
+    <LastModifiedAt>1726579408114</LastModifiedAt>
+    <BasePaths>/llm-youtube</BasePaths>
+    <BasePaths>/llm-query</BasePaths>
+    <Policies>
+        <Policy>SC-youtube</Policy>
+        <Policy>JS-setResponse</Policy>
+        <Policy>AM-getRequest</Policy>
+        <Policy>JS-genPrompt</Policy>
+        <Policy>AM-geminiRequest</Policy>
+        <Policy>RC-geminiResponse</Policy>
+        <Policy>VAK-apikey</Policy>
+        <Policy>ML-cloudLogging</Policy>
+        <Policy>QE-llm</Policy>
+        <Policy>JS-checkTokens</Policy>
+        <Policy>JS-faultMessage</Policy>
+        <Policy>EV-getQuery</Policy>
+    </Policies>
+    <ProxyEndpoints>
+        <ProxyEndpoint>default</ProxyEndpoint>
+        <ProxyEndpoint>query</ProxyEndpoint>
+    </ProxyEndpoints>
+    <Resources>
+        <Resource>jsc://setResponse.js</Resource>
+        <Resource>jsc://genPrompt.js</Resource>
+        <Resource>jsc://checkTokens.js</Resource>
+        <Resource>jsc://faultMessage.js</Resource>
+    </Resources>
+    <TargetEndpoints>
+        <TargetEndpoint>default</TargetEndpoint>
+    </TargetEndpoints>
+</APIProxy>

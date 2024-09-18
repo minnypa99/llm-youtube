@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MessageLogging continueOnError="false" enabled="true" name="ML-cloudLogging">
+    <DisplayName>ML-cloudLogging</DisplayName>
+    <CloudLogging>
+        <LogName>projects/{organization.name}/logs/llm-youtube</LogName>
+        <Message contentType="application/json">{
+    "department": "{apigee.developer.app.name}",
+    "clientip": "{proxy.client.ip}",
+    "basepath": "{proxy.basepath}",    
+    "model": "{llm.model}",
+    "input": "{llm.query}",
+    "response": "{escapeJSON(llm.response)}",
+    "reqTokens":{req_token_count},
+    "resTokens":{res_token_count},
+    "message_id":"{messageid}",
+    "cache_hit":{llm.cachehit},
+    "reqTime" : "{llm.kstimestamp}",
+    "start" : {client.received.start.timestamp},
+    "end" : {client.sent.end.timestamp},
+    "result": "{firstnonnull(llm.result, 'Fail')}"       
+}</Message>
+    </CloudLogging>
+</MessageLogging>

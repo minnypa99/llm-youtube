@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables continueOnError="false" enabled="true" name="EV-getQuery">
+  <DisplayName>EV-getQuery</DisplayName>
+  <Source clearPayload="false">request</Source>
+  <JSONPayload>
+    <Variable name="llm.query" type="string">
+      <JSONPath>$.query</JSONPath>
+    </Variable>
+    <Variable name="llm.model" type="string">
+      <JSONPath>$.model</JSONPath>
+    </Variable>
+  </JSONPayload>
+  <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+</ExtractVariables>

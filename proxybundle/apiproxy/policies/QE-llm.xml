@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Quota continueOnError="false" enabled="true" name="QE-llm">
+  <DisplayName>QE-llm</DisplayName>
+  <Properties/>
+  <Allow countRef="verifyapikey.VAK-apikey.apiproduct.developer.quota.limit"/>
+  <Interval ref="verifyapikey.VAK-apikey.apiproduct.developer.quota.interval"/>
+  <TimeUnit ref="verifyapikey.VAK-apikey.apiproduct.developer.quota.timeunit"/>
+  <Identifier ref="verifyapikey.VAK-apikey.client_id"/>
+  <Distributed>true</Distributed>
+  <Synchronous>true</Synchronous>
+</Quota>

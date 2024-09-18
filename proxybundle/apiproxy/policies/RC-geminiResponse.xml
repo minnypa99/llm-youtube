@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ResponseCache continueOnError="false" enabled="true" name="RC-geminiResponse">
+  <DisplayName>RC-geminiResponse</DisplayName>
+  <Properties/>
+  <CacheKey>
+    <KeyFragment ref="youtube.countrycode" type="string"/>
+    <KeyFragment ref="youtube.categoryid" type="string"/>
+    <KeyFragment ref="llm.model" type="string"/>
+  </CacheKey>
+  <Scope>Exclusive</Scope>
+  <ExpirySettings>
+    <TimeoutInSeconds>300</TimeoutInSeconds>
+  </ExpirySettings>
+  <SkipCacheLookup/>
+  <SkipCachePopulation/>
+</ResponseCache>

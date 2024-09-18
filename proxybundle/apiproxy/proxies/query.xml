@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="query">
+    <PreFlow name="PreFlow">
+        <Request>
+            <Step>
+                <Name>VAK-apikey</Name>
+            </Step>
+            <Step>
+                <Name>EV-getQuery</Name>
+            </Step>
+            <Step>
+                <Name>QE-llm</Name>
+            </Step>
+            <Step>
+                <Name>AM-geminiRequest</Name>
+            </Step>
+        </Request>
+        <Response>
+            <Step>
+                <Name>JS-setResponse</Name>
+            </Step>
+            <Step>
+                <Name>JS-checkTokens</Name>
+            </Step>
+        </Response>
+    </PreFlow>
+    <Flows/>
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response/>
+    </PostFlow>
+    <PostClientFlow>
+        <Request/>
+        <Response>
+            <Step>
+                <Name>ML-cloudLogging</Name>
+                <Condition>request.verb != "OPTIONS"</Condition>
+            </Step>
+        </Response>
+    </PostClientFlow>
+    <DefaultFaultRule name="default-fault">
+        <Step>
+            <Name>JS-faultMessage</Name>
+        </Step>
+    </DefaultFaultRule>
+    <HTTPProxyConnection>
+        <BasePath>/llm-query</BasePath>
+    </HTTPProxyConnection>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+</ProxyEndpoint>

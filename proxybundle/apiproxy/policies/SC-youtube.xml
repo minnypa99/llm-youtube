@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout continueOnError="false" enabled="true" name="SC-youtube">
+  <DisplayName>SC-youtube</DisplayName>
+  <Properties/>
+  <Request clearPayload="true" variable="youtubeRequest">
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+    <Set>
+      <!--Headers>
+      <Header name="apikey">{private.youtube.apikey}</Header>
+    </Headers-->
+    <QueryParams>
+      <!--<QueryParam name="key">{private.youtube.apikey}</QueryParam>-->
+      <QueryParam name="chart">mostPopular</QueryParam>
+      <QueryParam name="videoCategoryId">{youtube.categoryid}</QueryParam>
+      <QueryParam name="regionCode">{youtube.countrycode}</QueryParam>
+      <QueryParam name="part">snippet,statistics</QueryParam>
+      <QueryParam name="maxResults">10</QueryParam>
+    </QueryParams>
+    <Verb>GET</Verb>
+  </Set>
+</Request>
+<Response>youtubeResponse</Response>
+<HTTPTargetConnection>
+  <Authentication>
+    <GoogleAccessToken>
+      <Scopes>
+        <Scope>https://www.googleapis.com/auth/youtube</Scope>
+      </Scopes>
+    </GoogleAccessToken>
+  </Authentication>
+  <Properties/>
+  <URL>https://www.googleapis.com/youtube/v3/videos</URL>
+</HTTPTargetConnection>
+</ServiceCallout>

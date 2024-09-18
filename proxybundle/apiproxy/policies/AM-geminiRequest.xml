@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-geminiRequest">
+  <DisplayName>AM-geminiRequest</DisplayName>
+  <Properties/>
+  <Set>
+    <Payload>{
+    "contents": [
+        { 
+        "role":"user",
+        "parts": [
+            {
+                "text": "{escapeJSON(llm.query)} {escapeJSON(llm.info)} {escapeJSON(llm.lang)}" 
+            }
+        ]
+        }
+    ],
+    "generation_config": {
+        "candidate_count": 1,
+        "maxOutputTokens": 8192,
+        "temperature": 0,
+        "topP": 0.5,
+        "top_k": 1
+    }
+    }</Payload>
+    <Verb>POST</Verb>
+  </Set>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <AssignTo createNew="true">request</AssignTo>
+</AssignMessage>

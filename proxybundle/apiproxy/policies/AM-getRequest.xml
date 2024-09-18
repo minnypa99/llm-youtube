@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-getRequest">
+  <DisplayName>AM-getRequest</DisplayName>
+  <Properties/>
+  <AssignVariable>
+    <Name>youtube.countrycode</Name>
+    <Ref>request.queryparam.country</Ref>
+  </AssignVariable>
+  <AssignVariable>
+    <Name>youtube.lang</Name>
+    <Ref>request.queryparam.lang</Ref>
+  </AssignVariable>
+  <AssignVariable>
+    <Name>youtube.categoryid</Name>
+    <Ref>request.queryparam.category</Ref>
+  </AssignVariable>
+  <AssignVariable>
+    <Name>llm.model</Name>
+    <Ref>request.queryparam.model</Ref>
+  </AssignVariable>
+  <Remove>
+    <QueryParams>
+      <QueryParam name="country"/>
+      <QueryParam name="lang"/>
+      <QueryParam name="category"/>
+      <QueryParam name="model"/>
+      <QueryParam name="apikey"/>
+    </QueryParams>
+  </Remove>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>
