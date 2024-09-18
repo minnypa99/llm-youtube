@@ -22,7 +22,7 @@
         </Scopes>
       </GoogleAccessToken>
     </Authentication>
-    <URL>https://us-central1-aiplatform.googleapis.com/v1/projects/apigee-instance10/locations/us-central1/publishers/google/models/{llm.model}:generateContent</URL>
+    <URL>https://us-central1-aiplatform.googleapis.com/v1/projects/[add_your_project_id]/locations/us-central1/publishers/google/models/{llm.model}:generateContent</URL>
     <Properties>
       <Property name="io.timeout.mills">120000</Property>
     </Properties>
